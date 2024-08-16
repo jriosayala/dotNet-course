@@ -59,6 +59,47 @@ namespace Program
             {
                 Console.WriteLine("Book one and book two have different ISBN");
             }
+
+            // ATM Machine
+            Console.WriteLine("\n ATM Machine");
+            ATM atm = new ATM(4000.50m);
+            bool atmRunning = true;
+
+            while (atmRunning)
+            {
+                Console.WriteLine("\nMenu:");
+                Console.WriteLine("1. Check Balance");
+                Console.WriteLine("2. Deposit Money");
+                Console.WriteLine("3. Withdraw Money");
+                Console.WriteLine("4. Exit");
+
+                Console.WriteLine("Select an option: ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        atm.CheckBalance();
+                        break;
+                    case 2:
+                        Console.Write("Enter the amount to deposit: ");
+                        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
+                        atm.DepositMoney(depositAmount);
+                        break;
+                    case 3:
+                        Console.Write("Enter the amount to withdraw: ");
+                        decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
+                        atm.WithdrawMoney(withdrawAmount);
+                        break;
+                    case 4:
+                        atmRunning = false;
+                        Console.WriteLine("It was nice to help you. Thank you!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again");
+                        break;
+                }
+            }
         }
     }
 }
