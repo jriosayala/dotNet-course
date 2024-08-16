@@ -106,6 +106,38 @@ namespace Program
             classroom.InputGrades();
             classroom.CalculateMinMaxAvg();
             classroom.DisplayGrades();
+        
+            // Difference between dates
+            Console.WriteLine("Welcome to the difference Date Calculator");
+            DateCalculator diffCalculator = new();
+            // Prompt the user to enter the first date
+            DateTime firstDate = diffCalculator.GetDateTime("Enter the first date (MM/DD/YYYY): ");
+
+            // Prompt the user to enter the first date
+            DateTime secondDate= diffCalculator.GetDateTime("Enter the second date (MM/DD/YYYY): ");
+
+            int daysDifference = diffCalculator.DifferenceInDates(firstDate, secondDate);
+            // Show result to user
+            Console.WriteLine($"\nThe number of days between {firstDate:MM/dd/yyyy} and {secondDate:MM/dd/yyyy} is {daysDifference} day(s).");
+
+            // Text Analyzer
+            Console.WriteLine("Welcome to the Text Analyzer");
+            // Prompt the user to input a block of text
+            Console.WriteLine("Enter a block of text (press Enter twice to finish):");
+
+            TextAnalyzer textAnalyzer = new();
+            // Read the block of text 
+            string inputText = textAnalyzer.ReadBlockOfText();
+            // Count the number of words, sentences and paragraphs
+            int wordCount = textAnalyzer.CountWords(inputText);
+            int sentenceCount = textAnalyzer.CountSentences(inputText);
+            int paragraphCount = textAnalyzer.CountParagraphs(inputText);
+        
+            // Display the counts to the user
+            Console.WriteLine($"\nWord Count: {wordCount}");
+            Console.WriteLine($"Sentence Count: {sentenceCount}");
+            Console.WriteLine($"Paragraph: {paragraphCount}");
         }
+
     }
 }
