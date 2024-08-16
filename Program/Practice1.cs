@@ -1,61 +1,34 @@
-using System;
-using System.Runtime.Intrinsics.X86;
+using NonPrimitiveTypes;
+using PrimitiveTypesAndExpressions;
 
 namespace Program
 {
-    internal class BmiCalculator
+    class Practice1
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            double weight;
-            double height;
-
             Console.WriteLine("Welcome to the BMI Calculator");
             // Getting input from user
             Console.Write("Enter your weight in kilograms: ");
-            weight = Convert.ToDouble(Console.ReadLine());
+            double weight = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter your height in meters: ");
-            height = Convert.ToDouble(Console.ReadLine());
+            double height = Convert.ToDouble(Console.ReadLine());
 
-            double bmi = weight / (height * height);
-            string category = DetermineBMICategory(bmi);
-            Console.WriteLine($"You are considered: {category}");
+            BmiCalculator bmiCalculator = new(weight, height);
+            double bmi = bmiCalculator.CalculateBMI();
 
-        }
-
-
-        private static string DetermineBMICategory(double bmi)
-        {
-            if (bmi < 18.5)
-            {
-                return "Underweight";
-            }
-            else if (bmi >= 18.5 && bmi < 24.9)
-            {
-                return "Normal weight";
-            }
-            else if (bmi >= 25 && bmi < 29.9)
-            {
-                return "Overweight";
-            }
-            else
-            {
-                return "Obesity";
-            }
-        }
-    }
-    class Book(string title, string author, string isbn)
-    {
-        static void Main(String[] args)
-        {
+            Console.WriteLine($"Your Body Mass Index (BMI) is: {bmi:F2}");
+            Console.WriteLine($"You are considered: {bmiCalculator.DetermineBMICategory()}");
+            // <-------------------------------------------------------->
             Console.WriteLine("\n Book list management");
 
-            List<Book> bookList = new List<Book>();
-
-            // Append books to list
-            bookList.Add(new Book("Thinking, Fast and Slow", "Daniel Kahneman", "978-0374533557"));
-            bookList.Add(new Book("Sapiens: A Brief History of Humankind", "Yuval Noah Harari", "978-0062316097"));
-            bookList.Add(new Book("The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses", "Eric Ries", "978-0307887894"));
+            List<Book> bookList =
+            [
+                // Append books to list
+                new Book("Thinking, Fast and Slow", "Daniel Kahneman", "978-0374533557"),
+                new Book("Sapiens: A Brief History of Humankind", "Yuval Noah Harari", "978-0062316097"),
+                new Book("The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses", "Eric Ries", "978-0307887894"),
+            ];
 
             // Displaying books
             Console.WriteLine("Library:");
@@ -86,18 +59,6 @@ namespace Program
             {
                 Console.WriteLine("Book one and book two have different ISBN");
             }
-        }
-        public string Title { get; set; } = title;
-        public string Author { get; set; } = author;
-        public string ISBN { get; set; } = isbn;
-
-        public void DisplayBookDetails()
-        {
-            Console.WriteLine($"Title: {Title}, Author: {Author}, ISBN: {ISBN}");
-        }
-        public bool HasSameISBN(Book bookToCompare)
-        {
-            return ISBN == bookToCompare.ISBN;
         }
     }
 }
