@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Intrinsics.X86;
 
 namespace Program
 {
@@ -17,7 +18,32 @@ namespace Program
             height = Convert.ToDouble(Console.ReadLine());
 
             // Calculate BMI
-            Console.WriteLine($"Your Body Mass Index (BMI) is: {weight / (height * height):F2}");
+            double bmi = weight / (height * height);
+            Console.WriteLine($"Your Body Mass Index (BMI) is: {bmi}");
+
+            // Display BMI category
+            string category = DetermineBMICategory(bmi);
+            Console.WriteLine($"You are considered: {category}");
+        }
+
+        private static string DetermineBMICategory(double bmi)
+        {
+            if (bmi < 18.5)
+            {
+                return "Underweight";
+            }
+            else if (bmi >= 18.5 && bmi < 24.9)
+            {
+                return "Normal weight";
+            }
+            else if (bmi >= 25 && bmi < 29.9)
+            {
+                return "Overweight";
+            }
+            else
+            {
+                return "Obesity";
+            }
         }
     }
 }
