@@ -100,6 +100,12 @@ namespace Program
                         break;
                 }
             }
+            // Student Grades
+            Console.WriteLine("Welcome ot the Student Grades Manager!");
+            StudentGrades classroom = new StudentGrades();
+            classroom.InputGrades();
+            classroom.CalculateMinMaxAvg();
+            classroom.DisplayGrades();
         }
     }
 }
