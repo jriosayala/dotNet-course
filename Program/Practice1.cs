@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using NonPrimitiveTypes;
 using PrimitiveTypesAndExpressions;
 
@@ -63,7 +62,7 @@ namespace Program
 
             // ATM Machine
             Console.WriteLine("\n ATM Machine");
-            ATM atm = new ATM(4000.50m);
+            ATM atm = new(4000.50m);
             bool atmRunning = true;
 
             while (atmRunning)
@@ -110,14 +109,13 @@ namespace Program
         
             // Difference between dates
             Console.WriteLine("Welcome to the difference Date Calculator");
-            DateCalculator diffCalculator = new();
             // Prompt the user to enter the first date
-            DateTime firstDate = diffCalculator.GetDateTime("Enter the first date (MM/DD/YYYY): ");
+            DateTime firstDate = DateCalculator.GetDateTime("Enter the first date (MM/DD/YYYY): ");
 
             // Prompt the user to enter the first date
-            DateTime secondDate= diffCalculator.GetDateTime("Enter the second date (MM/DD/YYYY): ");
+            DateTime secondDate= DateCalculator.GetDateTime("Enter the second date (MM/DD/YYYY): ");
 
-            int daysDifference = diffCalculator.DifferenceInDates(firstDate, secondDate);
+            int daysDifference = DateCalculator.DifferenceInDates(firstDate, secondDate);
             // Show result to user
             Console.WriteLine($"\nThe number of days between {firstDate:MM/dd/yyyy} and {secondDate:MM/dd/yyyy} is {daysDifference} day(s).");
 
@@ -126,13 +124,12 @@ namespace Program
             // Prompt the user to input a block of text
             Console.WriteLine("Enter a block of text (press Enter twice to finish):");
 
-            TextAnalyzer textAnalyzer = new();
             // Read the block of text 
-            string inputText = textAnalyzer.ReadBlockOfText();
+            string inputText = TextAnalyzer.ReadBlockOfText();
             // Count the number of words, sentences and paragraphs
-            int wordCount = textAnalyzer.CountWords(inputText);
-            int sentenceCount = textAnalyzer.CountSentences(inputText);
-            int paragraphCount = textAnalyzer.CountParagraphs(inputText);
+            int wordCount = TextAnalyzer.CountWords(inputText);
+            int sentenceCount = TextAnalyzer.CountSentences(inputText);
+            int paragraphCount = TextAnalyzer.CountParagraphs(inputText);
         
             // Display the counts to the user
             Console.WriteLine($"\nWord Count: {wordCount}");

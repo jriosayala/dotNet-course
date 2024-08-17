@@ -1,8 +1,7 @@
-public class ATM {
-    private decimal balance;
-    public ATM(decimal initialBalance) {
-        balance = initialBalance;
-    }
+public class ATM(decimal initialBalance)
+{
+    private decimal balance = initialBalance;
+
     public void CheckBalance() {
         Console.WriteLine($"Your current balance is: {balance:C}");
     }

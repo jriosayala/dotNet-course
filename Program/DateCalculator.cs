@@ -1,6 +1,6 @@
 class DateCalculator
 {
-    public DateTime GetDateTime(string prompt)
+    public static DateTime GetDateTime(string prompt)
     {
         DateTime date;
         bool validDate = false;
@@ -19,7 +19,7 @@ class DateCalculator
         } while (!validDate);
         return date;
     }
-    public int DifferenceInDates(DateTime firstDate, DateTime secondDate) {
+    public static int DifferenceInDates(DateTime firstDate, DateTime secondDate) {
         TimeSpan dateDifference = secondDate - firstDate;
         return Math.Abs(dateDifference.Days);
     }

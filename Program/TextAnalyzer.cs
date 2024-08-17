@@ -1,6 +1,6 @@
 class TextAnalyzer
 {
-    public string ReadBlockOfText()
+    public static string ReadBlockOfText()
     {
         string inputText = "";
         string line;
@@ -15,7 +15,7 @@ class TextAnalyzer
     internal static readonly char[] separatorArray = ['.', '\n', '\t'];
     internal static readonly string[] separatorArray0 = ["\n\n"];
 
-    public int CountWords(string text)
+    public static int CountWords(string text)
     {
         if (string.IsNullOrWhiteSpace(text))
         {
@@ -24,7 +24,7 @@ class TextAnalyzer
         string[] words = text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
         return words.Length;
     }
-    public int CountSentences(string text)
+    public static int CountSentences(string text)
     {
         if (string.IsNullOrWhiteSpace(text))
         {
@@ -34,7 +34,7 @@ class TextAnalyzer
         return sentences.Length;
 
     }
-    public int CountParagraphs(string text)
+    public static int CountParagraphs(string text)
     {
         if (string.IsNullOrWhiteSpace(text))
         {
