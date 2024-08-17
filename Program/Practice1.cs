@@ -102,7 +102,7 @@ namespace Program
             }
             // Student Grades
             Console.WriteLine("Welcome ot the Student Grades Manager!");
-            StudentGrades classroom = new StudentGrades();
+            StudentGrades classroom = new();
             classroom.InputGrades();
             classroom.CalculateMinMaxAvg();
             classroom.DisplayGrades();
@@ -141,8 +141,7 @@ namespace Program
             // File path
             string inputFilePath = "names.txt";
             string outputFilePath = "sorted_names.txt";
-            NameSorter nameSorter = new();
-            nameSorter.Sorter(inputFilePath, outputFilePath);
+            NameSorter.Sorter(inputFilePath, outputFilePath);
         }
     }
 }

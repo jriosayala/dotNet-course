@@ -3,7 +3,7 @@ class TextAnalyzer
     public static string ReadBlockOfText()
     {
         string inputText = "";
-        string line;
+        string? line;
         while ((line = Console.ReadLine()) != null && line != "")
         {
             inputText += line + "\n";

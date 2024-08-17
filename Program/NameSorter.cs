@@ -1,6 +1,6 @@
 class NameSorter
 {
-    public void Sorter(string inputFilePath, string outputFilePath)
+    public static void Sorter(string inputFilePath, string outputFilePath)
     {
         try
         {

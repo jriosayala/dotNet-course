@@ -1,6 +1,6 @@
 class StudentGrades
 {
-    private List<double> grades = [];
+    private readonly List<double> grades = [];
 
     public void InputGrades()
     {
