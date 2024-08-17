@@ -44,3 +44,4 @@ msbuild.wrn
 
 # Json configs
 *.json
+Program/sorted_names.txt

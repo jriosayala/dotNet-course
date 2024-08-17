@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using NonPrimitiveTypes;
 using PrimitiveTypesAndExpressions;
 
@@ -137,7 +138,14 @@ namespace Program
             Console.WriteLine($"\nWord Count: {wordCount}");
             Console.WriteLine($"Sentence Count: {sentenceCount}");
             Console.WriteLine($"Paragraph: {paragraphCount}");
+        
+            // Sort names from input file
+            Console.WriteLine("Name Sorter");
+            // File path
+            string inputFilePath = "names.txt";
+            string outputFilePath = "sorted_names.txt";
+            NameSorter nameSorter = new();
+            nameSorter.Sorter(inputFilePath, outputFilePath);
         }
-
     }
 }
