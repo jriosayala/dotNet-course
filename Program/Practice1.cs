@@ -1,9 +1,8 @@
 using NonPrimitiveTypes;
-using PrimitiveTypesAndExpressions;
 
 namespace Program
 {
-    class Practice1
+    static internal class Practice1
     {
         private static void Main(string[] args)
         {
