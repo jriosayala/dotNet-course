@@ -5,9 +5,11 @@ internal static class MainControl
     public static void Main(string[] args)
     {
         bool ProgramIsRunning = true;
+        string menu = "\n1. Classroom Manager\n2. Book Manager\n6. Exit";
         do
         {
-            Console.WriteLine("\nSelect an option:");
+            Console.WriteLine("\nSelect an scenario to showcase:");
+            Console.WriteLine(menu);
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -23,6 +25,14 @@ internal static class MainControl
                     dotNet.PrintListStudents();
                     break;
                 case 2:
+                    var library = new Library();
+                    var newBook1 = new Book("The Catcher in the Rye", "J.D. Salinger", "978-0-316-76948-0");
+                    var newBook2 = new Book("Pride and Prejudice", "Jane Austen", "978-0-19-953556-9");
+
+                    library.AddBook(newBook1);
+                    library.AddBook(newBook1); // Attempt to add the same book again
+                    library.RemoveBook(newBook2); // Attempt to remove a book not in the list
+                    library.PrintBookList();
                     break;
                 case 3:
                     break;
