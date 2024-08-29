@@ -5,7 +5,7 @@ internal static class MainControl
     public static void Main(string[] args)
     {
         bool ProgramIsRunning = true;
-        string menu = "\n1. Classroom Manager\n2. Book Manager\n6. Exit";
+        string menu = "\n1. Classroom Manager\n2. Book Manager\n3. Vehicle \n6. Exit";
         do
         {
             Console.WriteLine("\nSelect an scenario to showcase:");
@@ -35,6 +35,14 @@ internal static class MainControl
                     library.PrintBookList();
                     break;
                 case 3:
+                    Car car = new("Toyota", "Camry", 2020, 4, true);
+                    Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2019, false);
+
+                    Console.WriteLine("Car Details:");
+                    car.DisplayDetails();
+
+                    Console.WriteLine("\nMotorcycle Details:");
+                    motorcycle.DisplayDetails();
                     break;
                 case 4:
                     break;
