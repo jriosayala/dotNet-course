@@ -5,7 +5,7 @@ internal static class MainControl
     public static void Main(string[] args)
     {
         bool ProgramIsRunning = true;
-        string menu = "\n1. Classroom Manager\n2. Book Manager\n3. Vehicle(Inheritance) \n4. Music Player (Interfaces)\n6. Exit";
+        string menu = "\n1. Classroom Manager\n2. Book Manager\n3. Vehicle(Inheritance) \n4. Music Player (Interfaces) \n5. Employee (Polymorphism) \n6. Exit";
         do
         {
             Console.WriteLine("\nSelect an scenario to showcase:");
@@ -63,6 +63,22 @@ internal static class MainControl
                     videoPlayer.Pause();
                     break;
                 case 5:
+                    // Create instances of Manager and Developer
+                    Manager manager = new("Mario", 101, 90000m, 5);
+                    Developer developer = new("Giovanni", 102, 80000m, "C#");
+                    List<Employee> employees = [manager, developer];
+
+                    // Demonstrate polymorphism by calling Work on each object
+                    foreach (var employee in employees)
+                    {
+                        employee.DisplayDetails();
+                        if (employee is IWorkable workableEmployee)
+                        {
+                            workableEmployee.Work();
+                            workableEmployee.TakeBreak();
+                        }
+                        Console.WriteLine();
+                    }
                     break;
                 case 6:
                     Console.WriteLine("\nIt was nice to be useful :)");
