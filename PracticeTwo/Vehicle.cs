@@ -10,4 +10,8 @@ public class Vehicle(string make, string model, int year)
     {
         Console.WriteLine($"Make: {Make}, Model: {Model}, Year: {Year}");
     }
+    public virtual void StartEngine()
+    {
+        Console.WriteLine("Starting the vehicle's engine...");
+    }
 }

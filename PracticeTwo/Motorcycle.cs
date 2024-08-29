@@ -9,4 +9,8 @@ public class Motorcycle(string make, string model, int year, bool hasSidecar) : 
         base.DisplayDetails();
         Console.WriteLine($"Has Sidecar: {HasSidecar}");
     }
+    public override void StartEngine()
+    {
+        Console.WriteLine("Starting the motorcycle's engine with a kick or button...");
+    }
 }
