@@ -5,7 +5,7 @@ internal static class MainControl
     public static void Main(string[] args)
     {
         bool ProgramIsRunning = true;
-        string menu = "\n1. Classroom Manager\n2. Book Manager\n3. Vehicle \n6. Exit";
+        string menu = "\n1. Classroom Manager\n2. Book Manager\n3. Vehicle(Inheritance) \n4. Music Player (Interfaces)\n6. Exit";
         do
         {
             Console.WriteLine("\nSelect an scenario to showcase:");
@@ -49,11 +49,23 @@ internal static class MainControl
                     }
                     break;
                 case 4:
+                    // Create instances of MusicPlayer and VideoPlayer
+                    MusicPlayer musicPlayer = new();
+                    VideoPlayer videoPlayer = new();
+
+                    // Demonstrate the use of the interface
+                    Console.WriteLine("Music Player:");
+                    musicPlayer.Play();
+                    musicPlayer.Pause();
+
+                    Console.WriteLine("\nVideo Player:");
+                    videoPlayer.Play();
+                    videoPlayer.Pause();
                     break;
                 case 5:
                     break;
                 case 6:
-                    Console.WriteLine("\nNice to be useful :)");
+                    Console.WriteLine("\nIt was nice to be useful :)");
                     ProgramIsRunning = false;
                     break;
                 default:
